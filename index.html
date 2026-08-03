@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Patil Raviraj Babasaheb | DevOps Engineer</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,9 +13,10 @@
     <!-- Header / Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">Portfolio<span>.</span></div>
+            <div class="logo">Raviraj<span>.DevOps</span></div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact" class="btn">Contact Me</a></li>
@@ -26,9 +27,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Raviraj Patil</span></h1>
-            <h2> DevOps Engineer </h2>
-            <p>DevOps & Cloud Engineer | AWS, Terraform, Ansible, Kubernetes, Docker, Jenkins, Prometheus & Grafana </p>
+            <h1>Hi, I'm <span class="highlight">Patil Raviraj Babasaheb</span></h1>
+            <h2>DevOps Engineer (2+ Years Experience)</h2>
+            <p>Specializing in Cloud Infrastructure (AWS & Azure), Kubernetes, CI/CD Pipelines, Infrastructure as Code (Terraform), and DevSecOps Automation.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary-btn">View My Work</a>
                 <a href="#contact" class="btn secondary-btn">Get In Touch</a>
@@ -38,75 +39,107 @@
 
     <!-- About Section -->
     <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">Profile Summary</h2>
         <div class="about-container">
-            <p>I specialize in cloud technologies with hands-on experience in configuring AWS services, automating infrastructure, and optimizing performance. I am driven by learning new tools, solving technical challenges, and building reliable systems.</p>
+            <p>To secure a challenging position in a dynamic organization where I can leverage my skills in cloud computing, web server management, and database setup to drive business growth. I aim to continuously enhance my technical expertise in AWS and Azure while contributing to the company's success through innovative solutions, dedicated smart work, and a proactive approach to problem-solving.</p>
+            <br>
+            <p><strong>Education:</strong> MS / M.Sc (Science), 2024 — Swami Ramanand Teerth Marathwada University (SRTMU)</p>
+            <p><strong>Location:</strong> Pune, India</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section dark-bg">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="experience-card">
+            <h3>DevOps Engineer</h3>
+            <h4>Skillogic Solutions Private Limited | <span>May 2024 - Present</span></h4>
+            <ul class="exp-list">
+                <li>Designed and implemented multiple VPCs with public and private subnets, peering, jump servers, and custom network configurations.</li>
+                <li>Configured and managed Elastic Load Balancers (ELB) and Auto Scaling Groups (ASG) for highly available and cost-efficient environments.</li>
+                <li>Managed IAM roles, policies, multi-factor authentication (MFA), and AWS security services including WAF, Network Firewall, KMS, Security Hub, and Route 53.</li>
+                <li>Provisioned and managed cloud infrastructure using Terraform (Infrastructure as Code) ensuring environment consistency.</li>
+                <li>Deployed and managed Kubernetes (EKS) applications, namespaces, pods, services, and cluster scaling.</li>
+                <li>Automated monitoring using AWS CloudWatch for server performance, CPU utilization, and disk usage.</li>
+                <li>Managed Linux environments including package management (RPM/YUM), EBS volume modification/patching, and user account management.</li>
+            </ul>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section dark-bg">
-        <h2 class="section-title">Skills & Expertise</h2>
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Expertise</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <i class="fa-brands fa-aws"></i>
-                <h3>AWS Services</h3>
-                <p>EC2, S3, CloudWatch, AMI Management, IAM Policies</p>
+                <h3>Cloud Services</h3>
+                <p>AWS (EC2, S3, VPC, CloudWatch, Route 53, RDS, Lambda, IAM, EKS), Azure</p>
             </div>
             <div class="skill-card">
-                <i class="fa-solid fa-network-wired"></i>
-                <h3>Cloud Infrastructure</h3>
-                <p>Cross-region Replication, Auto Scaling, Load Balancing</p>
+                <i class="fa-solid fa-cubes"></i>
+                <h3>DevOps & Containers</h3>
+                <p>Kubernetes (EKS), Docker, Terraform, Ansible, Jenkins, ArgoCD</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>DevSecOps & Monitoring</h3>
+                <p>SonarQube, Trivy, OWASP, Prometheus, Grafana, CloudWatch</p>
             </div>
             <div class="skill-card">
                 <i class="fa-solid fa-code"></i>
-                <h3>Web Fundamentals</h3>
-                <p>HTML5, CSS3, JavaScript, Git & GitHub</p>
+                <h3>Scripting & OS</h3>
+                <p>Linux, Bash / Shell, Python, Groovy, Git, Security Groups</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
+    <section id="projects" class="section dark-bg">
+        <h2 class="section-title">Featured Project</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Cross-Region AMI & Snapshot Migration</h3>
-                <p>Automated snapshot creation in AWS us-east-1 and transferred it across regions to us-west-2 to build a high-availability AMI setup.</p>
+                <h3>End-To-End DevOps & DevSecOps GitOps Pipeline on AWS EKS</h3>
+                <p>Architected and deployed a highly available MERN stack application on AWS EKS utilizing eksctl for automated cluster provisioning.</p>
+                <ul class="project-details">
+                    <li>Built a Jenkins Master-Worker build farm on AWS EC2 to isolate execution environments and optimize parallel pipeline performance.</li>
+                    <li>Automated Kubernetes application deployments using ArgoCD to achieve zero-drift GitOps Continuous Delivery (CD).</li>
+                    <li>Enforced Shift-Left DevSecOps standards by integrating SonarQube, OWASP Dependency-Check, and Trivy image scanning into CI stages.</li>
+                    <li>Deployed Prometheus and Grafana using Helm charts to monitor cluster health and resource utilization.</li>
+                </ul>
                 <div class="tags">
-                    <span>AWS EC2</span>
-                    <span>S3</span>
-                    <span>Cloud Management</span>
+                    <span>AWS EKS</span>
+                    <span>Jenkins</span>
+                    <span>Docker</span>
+                    <span>ArgoCD</span>
+                    <span>Trivy</span>
+                    <span>SonarQube</span>
+                    <span>Prometheus</span>
                 </div>
-            </div>
-            <div class="project-card">
-                <h3>Auto Scaling & CloudWatch Monitoring</h3>
-                <p>Configured CloudWatch alarms and Auto Scaling policies to handle variable workloads and optimize infrastructure cost efficiency.</p>
-                <div class="tags">
-                    <span>CloudWatch</span>
-                    <span>Auto Scaling</span>
-                    <span>DevOps</span>
+                <div style="margin-top: 15px;">
+                    <a href="https://github.com/ravirajpatil198/wanderlust-project.git" target="_blank" class="btn primary-btn" style="font-size: 0.85rem; padding: 6px 12px;">
+                        <i class="fa-brands fa-github"></i> View GitHub Repo
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section dark-bg">
+    <section id="contact" class="section">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
-            <p>Feel free to reach out for opportunities, collaborations, or technical discussions!</p>
+            <p>I am open to new career opportunities in DevOps and Cloud Architecture.</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
-                <a href="https://linkedin.com" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="contact-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="mailto:patilraviraj198@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> patilraviraj198@gmail.com</a>
+                <a href="tel:+919403936337" class="contact-btn"><i class="fa-solid fa-phone"></i> +91 9403936337</a>
+                <a href="https://github.com/ravirajpatil198" target="_blank" class="contact-btn"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <p>&copy; 2026 Patil Raviraj Babasaheb. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
