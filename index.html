@@ -1,147 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patil Raviraj Babasaheb | DevOps Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patil Raviraj Babasaheb | DevOps Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0f1d;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --accent-blue: #38bdf8;
+      --accent-purple: #818cf8;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --tag-bg: rgba(56, 189, 248, 0.1);
+      --tag-border: rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: var(--accent-blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-blue);
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      color: var(--accent-blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: 2.85rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      text-transform: capitalize;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--accent-purple);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-bar a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Photo Frame */
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .photo-frame {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.2);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--card-bg);
+      display: block;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 1.25rem;
+      background: var(--accent-blue);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .skill-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      padding: 0.45rem 0.95rem;
+      border-radius: 8px;
+      color: #e5e7eb;
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+      background: var(--tag-bg);
+    }
+
+    /* Experience */
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .exp-period {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .exp-company {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-bullets {
+      list-style-type: none;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.85rem;
+      color: #d1d5db;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
+    /* Info & Education Split Grid */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-list {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--text-dim);
+    }
+
+    .info-val {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+      }
+      .contact-bar {
+        justify-content: center;
+      }
+      .photo-frame {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Raviraj<span>.DevOps</span></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact" class="btn">Contact Me</a></li>
-            </ul>
-        </nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="brand">patil raviraj <span>babasaheb</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+      <div class="hero-content">
+        <span class="badge">2 Years 6 Months Experience</span>
+        <h1>patil raviraj babasaheb</h1>
+        <h2>DevOps Engineer</h2>
+        <div class="contact-bar">
+          <span>📍 Pune, INDIA</span>
+          <span>•</span>
+          <span>📞 (+91) 9403936337</span>
+          <span>•</span>
+          <span>✉️ <a href="mailto:patilraviraj198@gmail.com">patilraviraj198@gmail.com</a></span>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="photo-frame">
+          <!-- Replace src="profile.jpg" with your uploaded picture file -->
+          <img src="profile.jpg" alt="Patil Raviraj Babasaheb" onerror="this.src='https://ui-avatars.com/api/?name=Raviraj+Patil&background=111827&color=38bdf8&size=256'" />
+        </div>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Patil Raviraj Babasaheb</span></h1>
-            <h2>DevOps Engineer (2+ Years Experience)</h2>
-            <p>Specializing in Cloud Infrastructure (AWS & Azure), Kubernetes, CI/CD Pipelines, Infrastructure as Code (Terraform), and DevSecOps Automation.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary-btn">View My Work</a>
-                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
-            </div>
-        </div>
+    <!-- Profile Summary -->
+    <section>
+      <h3 class="section-title">Profile Summary</h3>
+      <div class="card">
+        <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.75;">
+          AWS DevOps Engineer with 2+ years of experience in designing, implementing and managing scalable, secure and cost-effective cloud infrastructure. Strong expertise in AWS services (EC2, S3, VPC, IAM, RDS, CloudWatch, ELB, Auto Scaling, Route53, EKS) and DevOps tools including Jenkins, GitLab CI/CD, ArgoCD, Ansible, Docker, Kubernetes, and Terraform (laC). Hands-on experience with. Proven ability to optimize infrastructure, automate deployments, and support high-availability, production-grade systems. Adept at collaborating with cross-functional teams and driving digital transformation through cloud and Al technologies.
+        </p>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">Profile Summary</h2>
-        <div class="about-container">
-            <p>To secure a challenging position in a dynamic organization where I can leverage my skills in cloud computing, web server management, and database setup to drive business growth. I aim to continuously enhance my technical expertise in AWS and Azure while contributing to the company's success through innovative solutions, dedicated smart work, and a proactive approach to problem-solving.</p>
-            <br>
-            <p><strong>Education:</strong> MS / M.Sc (Science), 2024 — Swami Ramanand Teerth Marathwada University (SRTMU)</p>
-            <p><strong>Location:</strong> Pune, India</p>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section dark-bg">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="experience-card">
-            <h3>DevOps Engineer</h3>
-            <h4>Skillogic Solutions Private Limited | <span>May 2024 - Present</span></h4>
-            <ul class="exp-list">
-                <li>Designed and implemented multiple VPCs with public and private subnets, peering, jump servers, and custom network configurations.</li>
-                <li>Configured and managed Elastic Load Balancers (ELB) and Auto Scaling Groups (ASG) for highly available and cost-efficient environments.</li>
-                <li>Managed IAM roles, policies, multi-factor authentication (MFA), and AWS security services including WAF, Network Firewall, KMS, Security Hub, and Route 53.</li>
-                <li>Provisioned and managed cloud infrastructure using Terraform (Infrastructure as Code) ensuring environment consistency.</li>
-                <li>Deployed and managed Kubernetes (EKS) applications, namespaces, pods, services, and cluster scaling.</li>
-                <li>Automated monitoring using AWS CloudWatch for server performance, CPU utilization, and disk usage.</li>
-                <li>Managed Linux environments including package management (RPM/YUM), EBS volume modification/patching, and user account management.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2 class="section-title">Technical Expertise</h2>
+    <!-- Key Skills -->
+    <section id="skills">
+      <h3 class="section-title">Key skills</h3>
+      <div class="card">
         <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fa-brands fa-aws"></i>
-                <h3>Cloud Services</h3>
-                <p>AWS (EC2, S3, VPC, CloudWatch, Route 53, RDS, Lambda, IAM, EKS), Azure</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-cubes"></i>
-                <h3>DevOps & Containers</h3>
-                <p>Kubernetes (EKS), Docker, Terraform, Ansible, Jenkins, ArgoCD</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>DevSecOps & Monitoring</h3>
-                <p>SonarQube, Trivy, OWASP, Prometheus, Grafana, CloudWatch</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-code"></i>
-                <h3>Scripting & OS</h3>
-                <p>Linux, Bash / Shell, Python, Groovy, Git, Security Groups</p>
-            </div>
+          <span class="skill-pill">Amazon Ec2</span>
+          <span class="skill-pill">S3</span>
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Kubernetes</span>
+          <span class="skill-pill">Terraform</span>
+          <span class="skill-pill">Linux</span>
+          <span class="skill-pill">AWS VPC</span>
+          <span class="skill-pill">Ci/Cd</span>
+          <span class="skill-pill">Ansible</span>
+          <span class="skill-pill">Automation</span>
+          <span class="skill-pill">Route 53</span>
+          <span class="skill-pill">Shell / Bash</span>
+          <span class="skill-pill">AWS Cloudformation</span>
+          <span class="skill-pill">Amazon Cloudwatch</span>
+          <span class="skill-pill">Eks</span>
+          <span class="skill-pill">DevOps</span>
+          <span class="skill-pill">Security Groups Management</span>
+          <span class="skill-pill">GIT</span>
+          <span class="skill-pill">User Management</span>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section dark-bg">
-        <h2 class="section-title">Featured Project</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>End-To-End DevOps & DevSecOps GitOps Pipeline on AWS EKS</h3>
-                <p>Architected and deployed a highly available MERN stack application on AWS EKS utilizing eksctl for automated cluster provisioning.</p>
-                <ul class="project-details">
-                    <li>Built a Jenkins Master-Worker build farm on AWS EC2 to isolate execution environments and optimize parallel pipeline performance.</li>
-                    <li>Automated Kubernetes application deployments using ArgoCD to achieve zero-drift GitOps Continuous Delivery (CD).</li>
-                    <li>Enforced Shift-Left DevSecOps standards by integrating SonarQube, OWASP Dependency-Check, and Trivy image scanning into CI stages.</li>
-                    <li>Deployed Prometheus and Grafana using Helm charts to monitor cluster health and resource utilization.</li>
-                </ul>
-                <div class="tags">
-                    <span>AWS EKS</span>
-                    <span>Jenkins</span>
-                    <span>Docker</span>
-                    <span>ArgoCD</span>
-                    <span>Trivy</span>
-                    <span>SonarQube</span>
-                    <span>Prometheus</span>
-                </div>
-                <div style="margin-top: 15px;">
-                    <a href="https://github.com/ravirajpatil198/wanderlust-project.git" target="_blank" class="btn primary-btn" style="font-size: 0.85rem; padding: 6px 12px;">
-                        <i class="fa-brands fa-github"></i> View GitHub Repo
-                    </a>
-                </div>
-            </div>
+    <!-- Work Experience -->
+    <section id="experience">
+      <h3 class="section-title">Work Experience</h3>
+      <div class="card">
+        <div class="exp-header">
+          <div class="exp-role">DevOps Engineer</div>
+          <div class="exp-period">May 2024 - Present</div>
         </div>
+        <div class="exp-company">SKILLOGIC SOLUTIONS PRIVATE LIMITED</div>
+        <ul class="exp-bullets">
+          <li>Create system configuration diagrams for AWS services.</li>
+          <li>Design and implement multiple VPCs with public and private subnets, as per requirements.</li>
+          <li>Configure and manage Elastic Load Balancer (ELB) and Auto Scaling Groups to distribute traffic, ensuring a cost-efficient, fault-tolerant, and highly available environment.</li>
+          <li>Hands-on experience in creating IAM roles, users, and groups, and implementing MFA for enhanced security of AWS accounts and resources.</li>
+          <li>Create and configure S3 buckets to store files and host static web content in the AWS environment.</li>
+          <li>Create and manage S3 buckets, granting permissions through IAM and Bucket policies.</li>
+          <li>Implement and manage security services such as AWS WAF, Network Firewall, KMS, Security Hub. Route 53, and more.</li>
+          <li>Set up CloudWatch alarms for monitoring server performance, CPU utilisation, disk usage, etc.</li>
+          <li>Work with Linux server environments, ensuring effective configuration and maintenance.</li>
+          <li>Create VPC peering, jump servers, and configure public/private networks.</li>
+          <li>Manage AMI and EBS sharing, ensuring efficient storage and resource management.</li>
+          <li>Perform patching and resizing of EBS volumes as required</li>
+          <li>Install and upgrade packages using RPM and YUM package managers.</li>
+          <li>Perform Linux/Unix user account management tasks, ensuring proper access, and security.</li>
+          <li>Create new EBS volumes, modify volume sizes, or change volume types as necessary.</li>
+          <li>Understand and manage Kubernetes clusters, including deploying and scaling applications.</li>
+          <li>Work with Kubernetes namespaces, pods, and services for application management and resource allocation.</li>
+          <li>Use Terraform to provision and manage infrastructure as code for cloud environments.</li>
+          <li>Execute a Terraform plan and apply commands to implement changes, and ensure infrastructure consistency.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <p>I am open to new career opportunities in DevOps and Cloud Architecture.</p>
-            <div class="contact-links">
-                <a href="mailto:patilraviraj198@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> patilraviraj198@gmail.com</a>
-                <a href="tel:+919403936337" class="contact-btn"><i class="fa-solid fa-phone"></i> +91 9403936337</a>
-                <a href="https://github.com/ravirajpatil198" target="_blank" class="contact-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-            </div>
+    <!-- Education & Personal Information -->
+    <section id="education">
+      <div class="two-col-grid">
+        <div>
+          <h3 class="section-title">Education</h3>
+          <div class="card">
+            <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.4rem;">MS/M.Sc(Science), 2024</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Swami Ramanand Teerth Marathawada University (SRTMU)</p>
+          </div>
         </div>
+
+        <div>
+          <h3 class="section-title">Personal Information</h3>
+          <div class="card">
+            <ul class="info-list">
+              <li>
+                <span class="info-label">City</span>
+                <span class="info-val">Pune</span>
+              </li>
+              <li>
+                <span class="info-label">Country</span>
+                <span class="info-val">INDIA</span>
+              </li>
+              <li>
+                <span class="info-label">Languages</span>
+                <span class="info-val">English, Hindi, Marathi</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Patil Raviraj Babasaheb. All rights reserved.</p>
+      <p>&copy; 2026 Patil Raviraj Babasaheb. Hosted on AWS S3.</p>
     </footer>
 
-    <script src="script.js"></script>
+  </div>
+
 </body>
 </html>
