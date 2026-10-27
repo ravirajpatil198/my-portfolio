@@ -278,6 +278,71 @@
       color: var(--accent-blue);
     }
 
+    /* Projects */
+    .project-card {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .project-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-heading h4 {
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .project-category {
+      color: var(--accent-purple);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-links a {
+      color: var(--accent-blue);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card p,
+    .project-details {
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .project-details {
+      list-style: none;
+    }
+
+    .project-details li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-details li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
     /* Info & Education Split Grid */
     .two-col-grid {
       display: grid;
@@ -348,6 +413,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
   </nav>
@@ -445,6 +511,44 @@
           <li>Execute a Terraform plan and apply commands to implement changes, and ensure infrastructure consistency.</li>
         </ul>
       </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h3 class="section-title">Featured Project</h3>
+      <article class="card project-card">
+        <div class="project-heading">
+          <div>
+            <h4>Retail Store on Amazon EKS</h4>
+            <span class="project-category">Cloud Infrastructure · Kubernetes · GitOps</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ravirajpatil198/retail-store" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+            <a href="https://github.com/aws-containers/retail-store-sample-app" target="_blank" rel="noopener noreferrer">Upstream sample ↗</a>
+          </div>
+        </div>
+        <p>
+          Built the AWS infrastructure and deployment configuration for a containerized retail application using Terraform, Amazon EKS Auto Mode, Helm, and Argo CD.
+        </p>
+        <ul class="project-details">
+          <li>Provisioned a VPC with public and private subnets across three Availability Zones and configured an EKS Auto Mode cluster.</li>
+          <li>Integrated NGINX Ingress and cert-manager, and set up Argo CD to manage Helm-based application deployments.</li>
+          <li>Documented cluster access, deployment checks, and infrastructure teardown; configured a single NAT Gateway by default to keep development costs lower.</li>
+        </ul>
+        <div class="skills-grid" aria-label="Project technologies">
+          <span class="skill-pill">AWS</span>
+          <span class="skill-pill">Amazon EKS Auto Mode</span>
+          <span class="skill-pill">Terraform</span>
+          <span class="skill-pill">Kubernetes</span>
+          <span class="skill-pill">Helm</span>
+          <span class="skill-pill">Argo CD</span>
+          <span class="skill-pill">NGINX Ingress</span>
+          <span class="skill-pill">cert-manager</span>
+        </div>
+        <p>
+          The application is based on the AWS Containers Retail Store sample; my contribution focused on its AWS infrastructure and deployment setup.
+        </p>
+      </article>
     </section>
 
     <!-- Education & Personal Information -->
